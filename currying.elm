@@ -10,10 +10,13 @@ quadruple : Int -> Int
 quadruple number =
   multiply number 4
 
+-- here is the currying in action
+-- the multiply function is being "partially applied"
+-- the return value of double is actually a function
 double : Int -> Int
-double number =
-  multiply number 2
+double =
+  multiply 2
 
 multiply : Int -> Int -> Int
-multiply number multiplier =
+multiply multiplier number =
   number * multiplier
